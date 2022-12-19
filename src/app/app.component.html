@@ -1,8 +1,13 @@
 
 
 <div class = "center">
+    <form (ngSubmit)="onSubmit()">
 <mat-form-field MatFormFieldappearance="legacy">
     <mat-label>Mat Label Example</mat-label>
-    <input matInput placeholder="Placeholder">
+    <input matInput placeholder="Placeholder" [(ngModel)]="search" [ngModelOptions]="{standalone: true}">
+        <button type="submit">save</button>
 </mat-form-field>
+</form>
 </div>
+
+<h2>{{search}}</h2>

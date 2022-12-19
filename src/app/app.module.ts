@@ -10,6 +10,7 @@ import {MatSelectModule} from '@angular/material/select'
 import {HttpClientModule} from '@angular/common/http';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { ControlFComponent } from './control-f/control-f.component';
 
 
 
@@ -17,7 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ControlFComponent
   ],
   imports: [
     BrowserModule,
