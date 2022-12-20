@@ -1,1 +1,25 @@
 <h2>{{entered}}</h2>
+
+<div class="center">
+    <form>
+      <mat-form-field MatFormFieldappearance="legacy" [style.width.px]=400>
+        <mat-label>Search</mat-label>
+        <input
+          matInput
+          placeholder="Placeholder"
+          [(ngModel)]="filter"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple>
+            <mat-button-toggle value="Match Case">Match Case</mat-button-toggle>
+            <mat-button-toggle value="Match Whole Word">Match Whole Word</mat-button-toggle>
+            <mat-button-toggle value="regex">regex</mat-button-toggle>
+          </mat-button-toggle-group>
+      
+        <a [routerLink]="['control-f']">
+          <button type="submit" (click)="onSubmit()">save</button>
+          
+        </a>
+      </mat-form-field>
+    </form>
+  </div>

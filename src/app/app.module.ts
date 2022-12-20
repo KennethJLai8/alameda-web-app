@@ -13,6 +13,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { ControlFComponent } from './control-f/control-f.component';
 import { HomeComponent } from './home/home.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 const appRoutes: Routes = [
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatNativeDateModule,
     MatInputModule,
+    MatButtonToggleModule,
     RouterModule.forRoot(appRoutes)
 
   

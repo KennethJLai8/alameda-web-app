@@ -9,6 +9,7 @@ export class ControlFComponent implements OnInit{
 
   //@Input() entered: any;
   entered:any;
+  filter:any;
 
 
 
@@ -17,6 +18,11 @@ export class ControlFComponent implements OnInit{
     this.entered = localStorage.getItem('search');
     
 
+  }
+
+  onSubmit()
+  {
+    
   }
 
   ngOnchanges(changes: SimpleChanges)
