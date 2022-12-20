@@ -1,0 +1,22 @@
+<div class="center">
+    <form>
+      <mat-form-field MatFormFieldappearance="legacy">
+        <mat-label>Mat Label Example</mat-label>
+        <input
+          matInput
+          placeholder="Placeholder"
+          [(ngModel)]="search"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      
+        <a [routerLink]="['control-f']">
+          <button type="submit" (click)="onSubmit()">save</button>
+          
+        </a>
+      </mat-form-field>
+    </form>
+  </div>
+
+  <!--<app-control-f [entered]="search"></app-control-f> -->
+  <h2>{{ search }}</h2>
+  
