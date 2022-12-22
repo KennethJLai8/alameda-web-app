@@ -6,11 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+
+
+
 namespace alameda_backend.Controllers
 {
-    [Route("api/[controller]")]
+  public class CodeModel
+  {
+    public string Code { get; set; }
+  }
+
+
+  [Route("api/[controller]")]
     public class alameda_web_app_Controller : Controller
     {
+    public static string returnedstring = "is this still working?";
         // GET: api/values
         /*
         [HttpGet]
@@ -20,16 +30,22 @@ namespace alameda_backend.Controllers
         }*/
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("BleachUpdated")]
+        public string GetB()
         {
-            return "value";
+            return returnedstring;
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        //[Route("UpdateBleach")]
+        public bool GetDetails([FromBody]CodeModel sent)//this should be working
         {
+            bool entered = false;
+            returnedstring = sent.Code;
+            entered = true;
+            return entered;
+     
         }
 
         // PUT api/values/5
@@ -44,11 +60,11 @@ namespace alameda_backend.Controllers
         {
         }
 
-    [HttpGet("Bleach")]
-    public string Get()
-    {
-      return "Bleach is Awesome";
+        [HttpGet("Bleach")]
+        public string Get()
+        {
+          return "Bleach is Awesome";
+        }
+      }
     }
-  }
-}
 

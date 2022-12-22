@@ -15,11 +15,13 @@ import { ControlFComponent } from './control-f/control-f.component';
 import { HomeComponent } from './home/home.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { AlamedaWebAppService } from './alameda-web-app.service';
+import { ResultsComponent } from './results/results.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'control-f', component: ControlFComponent}
+  {path: 'control-f', component: ControlFComponent},
+  {path: 'results', component: ResultsComponent}
 ]
 
 
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ControlFComponent,
-    HomeComponent
+    HomeComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

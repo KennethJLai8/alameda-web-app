@@ -15,7 +15,7 @@
             <mat-button-toggle value="regex">regex</mat-button-toggle>
           </mat-button-toggle-group>
       
-        <a [routerLink]="['control-f']">
+        <a [routerLink]="['/results']">
           <button type="submit" (click)="onSubmit()">save</button>
           
         </a>
@@ -24,3 +24,6 @@
   </div>
 <h2>result below</h2>
 <h2>{{result}}</h2>
+<h2>{{filter}}</h2>
+
+
