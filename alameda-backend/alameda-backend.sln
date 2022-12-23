@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1704.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "alameda-backend", "alameda-backend\alameda-backend.csproj", "{CF4B8D9F-721F-4904-9C85-B3E4074782E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexDemo", "..\..\RegexDemoApp\RegexDemo\RegexDemo.csproj", "{22EDEC40-0881-49A9-A38C-722078F7DEA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CF4B8D9F-721F-4904-9C85-B3E4074782E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF4B8D9F-721F-4904-9C85-B3E4074782E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF4B8D9F-721F-4904-9C85-B3E4074782E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22EDEC40-0881-49A9-A38C-722078F7DEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22EDEC40-0881-49A9-A38C-722078F7DEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22EDEC40-0881-49A9-A38C-722078F7DEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22EDEC40-0881-49A9-A38C-722078F7DEA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

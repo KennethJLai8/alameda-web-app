@@ -20,15 +20,18 @@ export class ControlFComponent implements OnInit{
 
  
 
-  entered:any;//aka search from home component input
-  filter:string='';//the entered string in the control-f component input field
+  homeString:any;//aka search from home component input
+  pattern:string='';//the entered string in the control-f component input field
   result:any;//again this needs to be in the results page component. using this here for testing
   //returnedBleach:any;//from GetB() funcion in C#
 
-  sendBackend = {//prob delete
-    name: "Bleach String",
-    filter: this.filter
-  }
+  regexFlag:boolean=false;
+  matchCaseFlag:boolean=false;
+  wholeWordFlag:boolean=false;
+
+
+
+  
 
 
 
@@ -37,9 +40,9 @@ export class ControlFComponent implements OnInit{
   constructor(private alamedaWebAppService : AlamedaWebAppService, private http: HttpClient){}
 
   ngOnInit(): void{
-    this.entered = localStorage.getItem('search');
+    this.homeString = localStorage.getItem('search');
 
-    this.alamedaWebAppService.returnData().subscribe(data => {this.result=data;});//this needs to be in the results page component
+    //this.alamedaWebAppService.returnData().subscribe(data => {this.result=data;});//this needs to be in the results page component
 
     
   }
@@ -52,9 +55,16 @@ export class ControlFComponent implements OnInit{
     /*let bar: any = new Object();
   bar.foo = 'Hello World';
     */
-
-    this.http.post<any>('https://localhost:7054/api/alameda_web_app_', {code: this.filter}).subscribe(
-      x=> console.log(x));
+/*
+  console.log(this.regexFlag);
+  console.log(this.matchCaseFlag);
+  console.log(this.wholeWordFlag);
+*/
+    this.http.post<any>('https://localhost:7054/api/alameda_web_app_', {pattern: this.pattern, homeString: this.homeString,
+  regexFlag: this.regexFlag, matchCaseFlag: this.matchCaseFlag, wholeWordFlag: this.wholeWordFlag}).subscribe(
+      x=> console.log(x));//need to also post the entry on home component. the coders eat cod shit
+      //homeString was sending NULL becuase it was named stringToSend: this.homeString. YOU REALLY HAVE TO MATCH the .net
+      //class variable name side
 
   }
 

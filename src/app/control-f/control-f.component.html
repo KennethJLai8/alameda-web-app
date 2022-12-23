@@ -6,13 +6,13 @@
         <input
           matInput
           placeholder="Placeholder"
-          [(ngModel)]="filter"
+          [(ngModel)]="pattern"
           [ngModelOptions]="{ standalone: true }"
         />
-        <mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple>
-            <mat-button-toggle value="Match Case">Match Case</mat-button-toggle>
-            <mat-button-toggle value="Match Whole Word">Match Whole Word</mat-button-toggle>
-            <mat-button-toggle value="regex">regex</mat-button-toggle>
+        <mat-button-toggle-group name="flags" aria-label="flags" multiple>
+            <mat-button-toggle value="Regex" (click)="regexFlag = !regexFlag">Regex</mat-button-toggle>
+            <mat-button-toggle value="Match Case" (click)="matchCaseFlag = !matchCaseFlag">Match Case</mat-button-toggle>
+            <mat-button-toggle value="Match Whole Word" (click)="wholeWordFlag = !wholeWordFlag">Match Whole Word</mat-button-toggle>
           </mat-button-toggle-group>
       
         <a [routerLink]="['/results']">
@@ -23,7 +23,6 @@
     </form>
   </div>
 <h2>result below</h2>
-<h2>{{result}}</h2>
-<h2>{{filter}}</h2>
+<h2>{{homeString}}</h2>
 
 
