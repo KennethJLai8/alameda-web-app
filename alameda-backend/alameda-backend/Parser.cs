@@ -6,50 +6,53 @@ namespace alameda_backend
 {
   public class Parser
   {
-    public Parser(string toSearch, string pattern, bool matchCase, bool wholeWord, string[] individualWords)
+    public Parser(string toSearch, bool matchCase, bool wholeWord, string[] individualWords, string[] individualPattern)
     {
       this.toSearch = toSearch;
-      this.pattern = pattern;
       this.matchCase = matchCase;
       this.wholeWord = wholeWord;
       this.individualWords = individualWords;
+      this.individualPattern = individualPattern;
     }
-    string toSearch;
-    string pattern;
+
     public string[] returnStrings;
+
+    string toSearch;
     string[] individualWords;
+    string[] individualPattern;
     bool regex;
     bool matchCase;
     bool wholeWord;
 
     public void regexTrue()
     {
-      for (int i = 0; i < pattern.Length; i++)
+      for(int i = 0; i < individualPattern.Length; i++)
       {
-        if (pattern[i] == '?')
+        for (int j = 0; j < individualPattern[i].Length; j++)
         {
-          pattern = pattern.Remove(i, 1).Insert(i, ".");
-        }
-        if (pattern[i] == '*')
-        {
-          pattern = pattern.Remove(i, 1).Insert(i, ".*");
-          i++;
-        }
-        if (pattern[i] == '~' && ((pattern[i] != '?') && (pattern[i] != '*')))
-        {
-          pattern = pattern.Remove(i, 1).Insert(i, "\\");
-          i++;
-        }
-        List<string> matchCaseList = regexTrueMatchCase();
-        regexTrueWholeWord(matchCaseList);
-      }//end of regexTrue
+          if (individualPattern[i][j] == '?')
+          {
+            individualPattern[i] = individualPattern[i].Remove(j, 1).Insert(j, ".");
+          }
+          if (individualPattern[i][j] == '*')
+          {
+            individualPattern[i] = individualPattern[i].Remove(j, 1).Insert(j, ".*");
+            i++;
+          }
+          if (individualPattern[i][j] == '~' && ((individualPattern[i][j] != '?') && (individualPattern[i][j] != '*')))
+          {
+            individualPattern[i] = individualPattern[i].Remove(j, 1).Insert(j, "\\");
+            i++;
+          }
+          List<string> matchCaseList = regexTrueMatchCase();
+          regexTrueWholeWord(matchCaseList);
+        }//end of regexTrue
+      }
     }
 
-      public void regexFalse()
+     public void regexFalse()
       {
         List<string> matchCaseList = regexFalseMatchCase();
-
-
         regexFalseWholeWord(matchCaseList);
       }
 
@@ -59,21 +62,35 @@ namespace alameda_backend
 
         if (matchCase == true)
         {
-          foreach (String s in individualWords)
+          for (int i = 0; i < individualPattern.Length; i++)
           {
-            if (Regex.IsMatch(s, pattern))
+            foreach (String s in individualWords)
             {
-              regMatchCaseList.Add(s);
+              if (Regex.IsMatch(s, individualPattern[i]))
+              {
+                regMatchCaseList.Add(s);
+              }
             }
           }
         }
         else
         {
-          Regex regexCaseIns =
-              new Regex(pattern, RegexOptions.IgnoreCase);
+        //array of Regex
+
+         Regex[] rArray;
+         List<Regex> rList = new List<Regex>();
+
+        for (int i = 0; i < individualPattern.Length; i++)
+        {
+          Regex regexCaseIns = new Regex(individualPattern[i], RegexOptions.IgnoreCase);
+          rList.Add(regexCaseIns);
+        }
+        rArray = rList.ToArray();
+
+        for(int i = 0; i < rArray.Length; i++)
           foreach (String s in individualWords)
           {
-            if (regexCaseIns.IsMatch(s))
+            if (rArray[i].IsMatch(s))
             {
               regMatchCaseList.Add(s);
             }
@@ -89,17 +106,29 @@ namespace alameda_backend
 
         if (wholeWord == true)
         {
-          string patternRegex = "(\\b|^)" + pattern + "(\\b|$)";
-          Regex regexCaseIns =
-              new Regex(patternRegex, RegexOptions.IgnoreCase);
 
+        Regex[] rArray;
+        List<Regex> rList = new List<Regex>();
+
+        for (int i = 0; i < individualPattern.Length; i++)
+        {
+          string patternRegex = "(\\b|^)" + individualPattern[i] + "(\\b|$)";
+          Regex regexCaseIns = new Regex(patternRegex, RegexOptions.IgnoreCase);
+          rList.Add(regexCaseIns);
+        }
+        rArray = rList.ToArray();
+
+
+        for (int i = 0; i < rArray.Length; i++)
+        {
           foreach (string s in regMatchCaseArr)
           {
-            if (regexCaseIns.IsMatch(s))
+            if (rArray[i].IsMatch(s))
             {
               regwholeWordlist.Add(s);
             }
           }
+        }
           string[] regWholeWordListArr = regwholeWordlist.ToArray();
 
           returnStrings = regWholeWordListArr;
@@ -116,21 +145,27 @@ namespace alameda_backend
 
         if (matchCase == true)
         {
+        for (int i = 0; i < individualPattern.Length; i++)
+        {
           foreach (String s in individualWords)
           {
-            if (s.Contains(pattern))
+            if (s.Contains(individualPattern[i]))
             {
               list.Add(s);
             }
           }
         }
+        }
         else
         {
-          foreach (String s in individualWords)
+          for (int i = 0; i < individualPattern.Length; i++)
           {
-            if (s.Contains(pattern,System.StringComparison.CurrentCultureIgnoreCase))
+            foreach (String s in individualWords)
             {
-              list.Add(s);
+              if (s.Contains(individualPattern[i], System.StringComparison.CurrentCultureIgnoreCase))
+              {
+                list.Add(s);
+              }
             }
           }
           
@@ -143,19 +178,33 @@ namespace alameda_backend
         string[] matchCaseArray = matchCaseList.ToArray();
         List<string> wholeWordlist = new List<string>();
 
+
+
         if (wholeWord == true)
         {
-          string patternRegex = "\\b" + pattern + "\\b";
-          Regex regexCaseIns =
-              new Regex(patternRegex, RegexOptions.IgnoreCase);
 
+        Regex[] rArray;
+        List<Regex> rList = new List<Regex>();
+
+        for (int i = 0; i < individualPattern.Length; i++)
+        {
+          string patternRegex = "(\\b|^)" + individualPattern[i] + "(\\b|$)";
+          Regex regexCaseIns = new Regex(patternRegex, RegexOptions.IgnoreCase);
+          rList.Add(regexCaseIns);
+        }
+        rArray = rList.ToArray();
+
+
+        for (int i = 0; i < rArray.Length; i++)
+        {
           foreach (string s in matchCaseArray)
           {
-            if (regexCaseIns.IsMatch(s))
+            if (rList[i].IsMatch(s))
             {
               wholeWordlist.Add(s);
             }
           }
+        }
 
           string[] wholeWordListArr = wholeWordlist.ToArray();
 

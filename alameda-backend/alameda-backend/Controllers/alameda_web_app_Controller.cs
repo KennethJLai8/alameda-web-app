@@ -26,6 +26,7 @@ namespace alameda_backend.Controllers
       string pattern = sent.pattern;
 
       string[] individualWords;
+      string[] individualPattern;
 
       if (string.IsNullOrEmpty(toSearch))
       {
@@ -38,7 +39,18 @@ namespace alameda_backend.Controllers
   
       }
 
-      Parser parser = new Parser(toSearch, pattern, matchCase, wholeWord, individualWords);
+      if (string.IsNullOrEmpty(pattern))
+      {
+        string[] empty = { " " };
+        individualPattern = empty;
+      }
+      else
+      {
+        individualPattern = pattern.Split(' ');
+
+      }
+
+      Parser parser = new Parser(toSearch, matchCase, wholeWord, individualWords, individualPattern);
 
       if(regex == true)
       {
