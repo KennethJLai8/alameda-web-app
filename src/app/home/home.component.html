@@ -1,14 +1,13 @@
 <div class="center">
     <form>
       <mat-form-field MatFormFieldappearance="legacy">
-        <mat-label>Please Type Here</mat-label>
+        <mat-label>Please enter string to search</mat-label>
         <input
           matInput
-          placeholder="Placeholder"
+          placeholder="Enter string"
           [(ngModel)]="search"
           [ngModelOptions]="{ standalone: true }"
         />
-      
         <a [routerLink]="['control-f']">
           <button type="submit" (click)="onSubmit()">save</button>
           
@@ -17,6 +16,5 @@
     </form>
   </div>
 
-  <!--<app-control-f [entered]="search"></app-control-f> -->
-  <!--<h2>{{ search }}</h2> -->
+
   

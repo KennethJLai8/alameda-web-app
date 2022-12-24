@@ -1,11 +1,10 @@
-
 <div class="center">
-    <form onsubmit="return formSubmit(this);">
+    <form>
       <mat-form-field MatFormFieldappearance="legacy" [style.width.px]=400>
-        <mat-label>Search</mat-label>
+        <mat-label>Enter String</mat-label>
         <input
           matInput
-          placeholder="Placeholder"
+          placeholder="Please enter string pattern to search for"
           [(ngModel)]="pattern"
           [ngModelOptions]="{ standalone: true }"
         />
@@ -22,7 +21,6 @@
       </mat-form-field>
     </form>
   </div>
-<h2>result below</h2>
-<h2>{{homeString}}</h2>
+
 
 
