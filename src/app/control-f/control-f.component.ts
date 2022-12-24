@@ -4,6 +4,8 @@ import { AlamedaWebAppService } from '../alameda-web-app.service';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { HttpParams } from '@angular/common/http';
+import { RouterLinkDelayModule } from '@bcodes/ngx-routerlink-delay';
+import { Router } from '@angular/router';
 
 
 
@@ -31,13 +33,9 @@ export class ControlFComponent implements OnInit{
 
 
 
-  
 
 
-
-
-
-  constructor(private alamedaWebAppService : AlamedaWebAppService, private http: HttpClient){}
+  constructor(private alamedaWebAppService : AlamedaWebAppService, private http: HttpClient, private router: Router){}
 
   ngOnInit(): void{
     this.homeString = localStorage.getItem('search');
@@ -45,6 +43,9 @@ export class ControlFComponent implements OnInit{
     //this.alamedaWebAppService.returnData().subscribe(data => {this.result=data;});//this needs to be in the results page component
 
     
+  }
+  sleep(ms:number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   onSubmit()
@@ -65,8 +66,32 @@ export class ControlFComponent implements OnInit{
       x=> console.log(x));//need to also post the entry on home component. the coders eat cod shit
       //homeString was sending NULL becuase it was named stringToSend: this.homeString. YOU REALLY HAVE TO MATCH the .net
       //class variable name side
+    var delay:number=0;
+
+     while(delay < 800000000)
+     {
+      delay++;
+     }
+
+     //setTimeout(this.router.navigate(['/results']), 5000);
+     setTimeout(() => {
+      console.log('sleep');
+      this.router.navigate(['/results']);
+    }, 2000);
+
+   
+
+
+
+    
+
+    
+    
+
+  
 
   }
+
 
   ngOnchanges(changes: SimpleChanges)
   {

@@ -1,6 +1,6 @@
 
 <div class="center">
-    <form>
+    <form onsubmit="return formSubmit(this);">
       <mat-form-field MatFormFieldappearance="legacy" [style.width.px]=400>
         <mat-label>Search</mat-label>
         <input
@@ -15,7 +15,7 @@
             <mat-button-toggle value="Match Whole Word" (click)="wholeWordFlag = !wholeWordFlag">Match Whole Word</mat-button-toggle>
           </mat-button-toggle-group>
       
-        <a [routerLink]="['/results']">
+        <a>
           <button type="submit" (click)="onSubmit()">save</button>
           
         </a>
