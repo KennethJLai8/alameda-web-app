@@ -62,7 +62,7 @@ namespace alameda_backend.Controllers
             pattern = pattern.Remove(i, 1).Insert(i, ".*");
             i++;
           }
-          if (pattern[i] == '~')
+          if (pattern[i] == '~' && ((pattern[i] != '?') && (pattern[i] != '*')))
           {
             pattern = pattern.Remove(i, 1).Insert(i, "\\");
             i++;
@@ -120,7 +120,7 @@ namespace alameda_backend.Controllers
           returnStrings = regMatchCaseArr;
         } //end of wholeWord
       }
-      else
+      else//regex not true
       {
         List<string> list = new List<string>();
 
@@ -139,8 +139,8 @@ namespace alameda_backend.Controllers
           foreach (String s in individualWords)
           {
             if (
-                s
-                    .Contains(pattern,
+                
+                    s.Contains(pattern,
                     System
                         .StringComparison
                         .CurrentCultureIgnoreCase)
@@ -179,7 +179,7 @@ namespace alameda_backend.Controllers
       } //end of regex
     }
 
-    [HttpGet("Bleach")]
+    [HttpGet("results")]
     public ActionResult<string[]> Get()
     {
       return Ok(returnStrings);

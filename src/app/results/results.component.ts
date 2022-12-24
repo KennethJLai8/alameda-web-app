@@ -16,7 +16,7 @@ export class ResultsComponent {
   ngOnInit(): void{
    
 
-    this.http.get<string[]>('https://localhost:7054/api/alameda_web_app_/Bleach').subscribe(data => {this.returnedArray=data;})
+    this.http.get<string[]>('https://localhost:7054/api/alameda_web_app_/results').subscribe(data => {this.returnedArray=data;})
 
 
     
