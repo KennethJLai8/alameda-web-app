@@ -14,7 +14,6 @@ import { MatInputModule } from '@angular/material/input';
 import { ControlFComponent } from './control-f/control-f.component';
 import { HomeComponent } from './home/home.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { AlamedaWebAppService } from './alameda-web-app.service';
 import { ResultsComponent } from './results/results.component';
 
 
@@ -50,7 +49,7 @@ const appRoutes: Routes = [
     
   ],
   providers: [
-    AlamedaWebAppService
+
     
   ],
   bootstrap: [AppComponent]

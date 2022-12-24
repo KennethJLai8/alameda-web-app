@@ -1,5 +1,4 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
-import { AlamedaWebAppService } from '../alameda-web-app.service';
 import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -17,7 +16,7 @@ export class ControlFComponent implements OnInit{
   matchCaseFlag:boolean=false;
   wholeWordFlag:boolean=false;
 
-  constructor(private alamedaWebAppService : AlamedaWebAppService, private http: HttpClient, private router: Router){}
+  constructor(private http: HttpClient, private router: Router){}
 
   ngOnInit(): void{
     this.homeString = localStorage.getItem('search');
@@ -29,12 +28,12 @@ export class ControlFComponent implements OnInit{
   onSubmit()
   {
     this.http.post<any>('https://localhost:7054/api/alameda_web_app_', {pattern: this.pattern, homeString: this.homeString,
-  regexFlag: this.regexFlag, matchCaseFlag: this.matchCaseFlag, wholeWordFlag: this.wholeWordFlag}).subscribe(
-      x=> console.log(x));
+    regexFlag: this.regexFlag, matchCaseFlag: this.matchCaseFlag, wholeWordFlag: this.wholeWordFlag}).subscribe(
+    x=> console.log(x));
 
-     setTimeout(() => {
-      console.log('sleep');
-      this.router.navigate(['/results']);
+    setTimeout(() => {
+    console.log('sleep');
+    this.router.navigate(['/results']);
     }, 500);
 
   }
