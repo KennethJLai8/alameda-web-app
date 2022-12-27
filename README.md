@@ -6,6 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+#Swagger API
+
+Open the alameda-backend project in Visual Studio. After running the project, a Swagger API service should start up.
+
 ## Description
 
 This project is meant to replicate a word search program similar to pressing CTRL-F. Enter the sentence that you would like to search on the first page.
