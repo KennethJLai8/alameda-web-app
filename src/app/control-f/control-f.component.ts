@@ -29,13 +29,7 @@ export class ControlFComponent implements OnInit{
   {
     this.http.post<any>('https://localhost:7054/api/alameda_web_app_', {pattern: this.pattern, homeString: this.homeString,
     regexFlag: this.regexFlag, matchCaseFlag: this.matchCaseFlag, wholeWordFlag: this.wholeWordFlag}).subscribe(
-    x=> console.log(x));
-
-    setTimeout(() => {
-    console.log('sleep');
-    this.router.navigate(['/results']);
-    }, 500);
-
+    _ => this.router.navigate(['/results']));
   }
 
 
@@ -43,9 +37,5 @@ export class ControlFComponent implements OnInit{
   {
     console.log(changes);
   }
-
-  
-
-
 
 }
