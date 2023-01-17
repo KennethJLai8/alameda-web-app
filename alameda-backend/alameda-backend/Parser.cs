@@ -7,27 +7,25 @@ namespace alameda_backend
 {
   public class Parser
   {
-    public Parser(CodeModel sent)
-    {
-      this.homeString = sent.homeString;
-      this.matchCase = sent.matchCaseFlag;
-      this.wholeWord = sent.wholeWordFlag;
-      //this.individualWords = individualWords;
-      //this.individualPattern = individualPattern;
-      this.regex = sent.regexFlag;
-      this.pattern = sent.pattern;
-    }
 
-    public string[] returnStrings;//test this
+    public string[]? returnStrings;//return to user
 
-    string homeString;
-    string pattern;
-    string[] individualWords;
-    string[] individualPattern;
+    string? homeString;
+    string? pattern;
     bool regex;
     bool matchCase;
     bool wholeWord;
+    string[] individualWords;
+    string[] individualPattern;
 
+    public Parser(CodeModel sent)
+    {
+      this.homeString = sent.homeString;
+      this.pattern = sent.pattern;
+      this.regex = sent.regexFlag;
+      this.matchCase = sent.matchCaseFlag;
+      this.wholeWord = sent.wholeWordFlag;
+    }
 
     public void homeStringIsNullOrEmpty()//string parameter
     {
