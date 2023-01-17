@@ -1,7 +1,7 @@
 using System;
 namespace alameda_backend
 {
-  public class CodeModel
+  public class CodeModel//follows format of json object we're sending from front end
   {
     public string pattern { get; set; }
 

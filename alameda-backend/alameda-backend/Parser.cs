@@ -1,28 +1,76 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Extensions.FileSystemGlobbing.Internal;
 
 namespace alameda_backend
 {
   public class Parser
   {
-    public Parser(string toSearch, bool matchCase, bool wholeWord, string[] individualWords, string[] individualPattern)
+    public Parser(CodeModel sent)
     {
-      this.toSearch = toSearch;
-      this.matchCase = matchCase;
-      this.wholeWord = wholeWord;
-      this.individualWords = individualWords;
-      this.individualPattern = individualPattern;
+      this.homeString = sent.homeString;
+      this.matchCase = sent.matchCaseFlag;
+      this.wholeWord = sent.wholeWordFlag;
+      //this.individualWords = individualWords;
+      //this.individualPattern = individualPattern;
+      this.regex = sent.regexFlag;
+      this.pattern = sent.pattern;
     }
 
-    public string[] returnStrings;
+    public string[] returnStrings;//test this
 
-    string toSearch;
+    string homeString;
+    string pattern;
     string[] individualWords;
     string[] individualPattern;
     bool regex;
     bool matchCase;
     bool wholeWord;
+
+
+    public void homeStringIsNullOrEmpty()//string parameter
+    {
+      if (string.IsNullOrEmpty(homeString))
+      {
+        string[] empty = { " " };
+        individualWords = empty;
+      }
+      else
+      {
+        individualWords = homeString.Split(' ');
+
+      }
+    }
+
+    public void patternIsNullOrEmpty()//string
+    {
+      if (string.IsNullOrEmpty(pattern))
+      {
+        string[] empty = { " " };
+        individualPattern = empty;
+      }
+      else
+      {
+        individualPattern = pattern.Split(' ');
+
+      }
+    }
+
+    public void regexFunctionSelector()
+    {
+      if (regex == true)//regex flag determines which regex method we enter
+      {
+        regexTrue();
+        //returnStrings = parser.returnStrings;
+      }
+      else
+      {
+        regexFalse();
+        //returnStrings = parser.returnStrings;
+      }
+    }
+
 
     public void regexTrue()
     {

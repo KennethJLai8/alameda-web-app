@@ -1,16 +1,31 @@
 ﻿<Properties StartupConfiguration="{9256EE13-2520-4E71-9542-8F966A632315}|Default">
-  <MonoDevelop.Ide.ItemProperties.alameda-backend PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.alameda-backend PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.alameda-backend.UnitTests FirstBuild="True" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/alameda_web_app_Controller.cs">
+    <Files>
+      <File FileName="Controllers/alameda_web_app_Controller.cs" Line="18" Column="1" />
+      <File FileName="../alameda-backend.UnitTests/UnitTest1.cs" Line="19" Column="37" />
+      <File FileName="Parser.cs" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="alameda-backend" expanded="True" />
+          <Node name="alameda-backend" expanded="True">
+            <Node name="alameda-backend" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="alameda-backend.UnitTests" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="ProjectDependencies" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>

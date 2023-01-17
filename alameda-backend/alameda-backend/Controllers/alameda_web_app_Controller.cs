@@ -18,52 +18,11 @@ namespace alameda_backend.Controllers
     [HttpPost]
     public void ToSearchPost([FromBody] CodeModel sent)
     {
-      bool regex = sent.regexFlag;
-      bool matchCase = sent.matchCaseFlag;
-      bool wholeWord = sent.wholeWordFlag;
-
-      string toSearch = sent.homeString;
-      string pattern = sent.pattern;
-
-      string[] individualWords;
-      string[] individualPattern;
-
-      if (string.IsNullOrEmpty(toSearch))
-      {
-        string[] empty = { " " };
-        individualWords = empty;
-      }
-      else
-      {
-        individualWords = toSearch.Split(' ');
-  
-      }
-
-      if (string.IsNullOrEmpty(pattern))
-      {
-        string[] empty = { " " };
-        individualPattern = empty;
-      }
-      else
-      {
-        individualPattern = pattern.Split(' ');
-
-      }
-
-      Parser parser = new Parser(toSearch, matchCase, wholeWord, individualWords, individualPattern);
-
-      if(regex == true)
-      {
-        parser.regexTrue();
-        returnStrings = parser.returnStrings;
-      }
-      else
-      {
-        parser.regexFalse();
-        returnStrings = parser.returnStrings;
-      }
-
-      
+      Parser parser = new Parser(sent);
+      parser.homeStringIsNullOrEmpty();//verifies user input
+      parser.patternIsNullOrEmpty();
+      parser.regexFunctionSelector();
+      returnStrings = parser.returnStrings;
     }
 
     [HttpGet("results")]
