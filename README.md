@@ -12,8 +12,18 @@ Open the alameda-backend project in Visual Studio. After running the project, a 
 
 ## Description
 
-This project is meant to replicate a word search program similar to pressing CTRL-F. Enter the sentence that you would like to search on the first page.
+This project is meant to replicate a word search program similar to pressing CTRL-F.
 
-After submitting your sentence, you will be navigated to a second page where you can enter what word or words that you would like to search for from the sentenc that you submitted on the first page.
+Enter the sentence that you would like to search on the first page.
+
+![Alt Text](InitialString.png)
+
+After submitting your sentence, you will be navigated to a second page where you can enter what word or words that you would like to search for from the sentence that you submitted on the first page.
 
 Underneath the text entry area, there are modfiers in the form of buttons that will make your search more specific.
+
+![Alt Text](Pattern.png)
+
+After entering your search pattern on the second page, you will be directed to the final page where the results of your query will be displayed
+
+![Alt Text](Results.png)
