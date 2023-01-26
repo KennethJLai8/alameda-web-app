@@ -12,7 +12,7 @@ Open the alameda-backend project in Visual Studio. After running the project, a 
 
 ## Description
 
-This project is meant to replicate a word search program similar to pressing CTRL-F.
+In this program, the user is able to enter a sentence and then search within the sentence that you initially entered.
 
 Enter the sentence that you would like to search on the first page.
 
