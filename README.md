@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-##Swagger API
+## Swagger API
 First of all, navigate to the "backend" folder. Secondly, open the file titled "alameda-backend.sln" within visual studio. After running the project, a Swagger API service should start up.
 
 ## Description
