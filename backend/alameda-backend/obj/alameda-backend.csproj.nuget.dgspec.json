@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kennethlai/Documents/alameda-web-app/alameda-backend/alameda-backend/alameda-backend.csproj": {}
+    "/Users/kennethlai/Documents/string-search/backend/alameda-backend/alameda-backend.csproj": {}
   },
   "projects": {
-    "/Users/kennethlai/Documents/alameda-web-app/alameda-backend/alameda-backend/alameda-backend.csproj": {
+    "/Users/kennethlai/Documents/string-search/backend/alameda-backend/alameda-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kennethlai/Documents/alameda-web-app/alameda-backend/alameda-backend/alameda-backend.csproj",
+        "projectUniqueName": "/Users/kennethlai/Documents/string-search/backend/alameda-backend/alameda-backend.csproj",
         "projectName": "alameda-backend",
-        "projectPath": "/Users/kennethlai/Documents/alameda-web-app/alameda-backend/alameda-backend/alameda-backend.csproj",
+        "projectPath": "/Users/kennethlai/Documents/string-search/backend/alameda-backend/alameda-backend.csproj",
         "packagesPath": "/Users/kennethlai/.nuget/packages/",
-        "outputPath": "/Users/kennethlai/Documents/alameda-web-app/alameda-backend/alameda-backend/obj/",
+        "outputPath": "/Users/kennethlai/Documents/string-search/backend/alameda-backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kennethlai/.nuget/NuGet/NuGet.Config"

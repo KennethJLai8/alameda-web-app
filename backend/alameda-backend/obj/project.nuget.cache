@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g0mB+Bp2syb1Z2nAZAeNBWAk7tECsspEQkGCeR+6R46WkJ5FwUIo1/pcYSf+Gof5jv70ci389ZbkovAcJ16dGw==",
+  "dgSpecHash": "3VJT/ZQz0mDpTIoKM3n7myxv2AuKVeCnsFzWJYStSfOc+NpQj5/4/dck2Wnfn8yf77h/FhlfruCgmo3j6YDVIA==",
   "success": true,
-  "projectFilePath": "/Users/kennethlai/Documents/alameda-web-app/alameda-backend/alameda-backend/alameda-backend.csproj",
+  "projectFilePath": "/Users/kennethlai/Documents/string-search/backend/alameda-backend/alameda-backend.csproj",
   "expectedPackageFiles": [
     "/Users/kennethlai/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/kennethlai/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
