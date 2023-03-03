@@ -11,7 +11,7 @@ First of all, navigate to the "backend" folder. Secondly, open the file titled "
 
 ## Description
 
-In this program, the user is able to enter a sentence and then search within the sentence that you initially entered.
+In this program, the user is able to enter a sentence and then search within the sentence that they initially entered.
 
 Enter the sentence that you would like to search on the first page.
 
