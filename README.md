@@ -23,6 +23,6 @@ Underneath the text entry area, there are modfiers in the form of buttons that w
 
 ![Alt Text](Pattern.png)
 
-After entering your search pattern on the second page, you will be directed to the final page where the results of your query will be displayed
+After entering your search pattern on the second page, you will be directed to the final page where the results of your query will be displayed.
 
 ![Alt Text](Results.png)
